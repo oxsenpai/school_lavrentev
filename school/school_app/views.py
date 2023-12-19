@@ -8,7 +8,31 @@ def index(request):
 
 
 def courses(request):
-    return render(request, 'school_app/courses.html')
+    data = {
+        'obj': [
+            {   'image': 'course-01.jpg',
+                'header': 'Курс для начинающих',
+                'description': 'descript',
+                'author_image': "courses/author-02.png",
+                'is_free': True,
+            },
+            {
+                'image': 'course-02',
+                'header': 'Курс для опытных',
+                'description': 'descript',
+                'author_image': 'products/author-02.png',
+                'is_free': False,
+            },
+            {
+                'image': 'course-03',
+                'header': 'Курс для профессионалов',
+                'description': 'descript',
+                'author_image': 'products/author-03.jpg',
+                'is_free': False,
+            },
+        ]
+    }
+    return render(request, 'school_app/courses.html', context = data)
 
 
 def presentation(request):
